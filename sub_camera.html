@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="plugins/animate/animate.css" />
+    <style type="text/css">
+
+        .fixed {
+            position: fixed;
+            top: 20%; right: 3%;
+            z-index: 999;
+        }
+        .fixed a img {
+            width: 120px;
+            background: #eee;
+            border-radius: 100%;            
+        }
+        .fixed a img:hover {background: hotpink;}
+        .top_sub {width: 75%; margin: 0 auto;
+            display: flex; justify-content: space-between;
+        }
+        .top_sub h2 {margin-top: 130px;
+        }
+        .top_sub div {width: 80%;
+            height: 147px;
+            border-bottom: 2px solid #272a71;
+        }
+
+        /*  */
+        .top_sub_text {width: 75%;
+            margin: 0 auto;
+            font-family: 'Noto Sans KR', sans-serif;}
+        .main_sub4 {width: 75%;
+            margin: 0 auto;
+        }
+
+
+        /** 화면 전체를 덮는 배경 레이어의 위치, 크기, 투명도 지정 > 기본적으로 표시되지 않도록 설정 */
+        .gray_layer {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background: black;
+            opacity: 0.60;
+            display: none;
+            z-index: 999;
+        }
+        /** 이미지가 표현될 레이어를 화면 중앙에 배치 > 기본적으로 표시되지 않도록 설정 */
+        .over_layer {
+            /* 요소의 좌측상단 꼭지점이 화면 중앙에 위치 */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            /* 요소의 크기/2 만큼 왼쪽,상단 방향으로 이동시켜 가운데 배치 */
+            margin-top: -244px;
+            margin-left: -325px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .main_sub4 ul li {
+            display: flex; justify-content: space-between;
+            margin: 20px 0;
+        }
+        .main_sub4 ul li a {position: relative;}
+        .main_sub4 ul li a img {width: 300px;}
+        .main_sub4 ul li a img:hover {
+            background: #777;
+            opacity: 0.5;
+        }
+        .main_sub4 ul li a:hover figure {
+            display: block;
+        }
+        .main_sub4 ul li a figure {color: black;
+            position: absolute; top: 80%; left: 35%;
+            display: none;
+        }
+        .main_sub4 ul li:nth-of-type(2) a figure {
+            top: 90%;
+        }
+        .main_sub4 ul li:nth-of-type(5) a figure {
+            top: 90%;
+        }
+        .main_sub4 ul li a figure img {width: 32px;
+            vertical-align: middle;
+        }
+        .main_sub4 ul li nav {
+            width: 60%;
+            margin-top: 40px;
+        }
+        .main_sub4 ul li nav h2 strong {color: #525597;
+            font-family: 'Noto Sans KR', sans-serif;            
+        }
+        .main_sub4 ul li nav figure {
+            white-space: pre-line;
+            font-size: 14px;
+        }
+        .main_sub4 ul li nav figcaption {
+            display: flex; justify-content: space-between;
+        }
+
+    </style>
+</head>
+<body>
+    <header id="site-header">
+        <div>
+            <a href="index.html"><img src="imgs/logo_1.jpg"></a>
+            <ul class="menu">
+                <li>
+                    <a href="sub_site.html">사이트 소개</a>
+                    <span>
+                        <a href="sub_site.html">사이트 소개</a>
+                        <a href="sub_map.html">찾아오시는 길</a>
+                    </span>
+                </li>
+        
+                <li>
+                    <a href="sub_science.html">사이언스 솔루션</a>
+                    <span>
+                        <a href="sub_science.html">현미경 솔루션</a>
+                    </span>
+                </li>
+        
+                <li>
+                    <a href="#">제품 보기</a>
+                    <span>
+                        <a href="sub_videoscope.html">산업 내시경</a>
+                        <a href="sub_camera.html">디지털 카메라</a>
+                    </span>
+                </li>
+        
+                <li>
+                    <a href="sub_join.html">견적 및 A/S 문의</a>
+                    <span>
+                        <a href="sub_join.html">견적 및 A/S 문의</a>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="fixed"><a href="sub_camera.html"><img src="imgs/fixed3.png"></a></div>
+    <div class="top_sub">
+        <h2>올림푸스 카메라</h2>
+        <div></div>
+    </div>
+
+    <div class="top_sub_text">My Digital Story OLYMPUS</div><br />
+
+    <div class="main_sub4">
+        <div class='gray_layer' id='background'></div>
+        <div class='over_layer' id='front'></div>
+        <ul>
+            <li>
+                <a href="imgs/sub41_1.jpg" class="modal"><img src="imgs/sub4_1.jpg"><figure><img src="imgs/sub4_icon.png"> 크게 보기</figure></a>
+                <nav>
+                    <h2><strong>올림푸스</strong> OM-D Mark ll</h2><br />
+                    <figure>SLR카메라 / 35mm필름(135포맷) / 렌즈교환식(렌즈포함) / 셀프타이머 / 마운트 미러리스 / 1605만화소 / CMOS 
+                    마이크로포서드(1:2크롭) / 보급형 / TruePic VIII
+                    최고ISO25600 / 셔터:1/4000초 / 초당8.6매 / 컨트라스트AF / 초점영역: 121개 /
+                    
+                    팝업플래시 / WiFi / 리모컨어플 / SNS공유 / 5축 손떨림보정 / RAW지원 / HDR촬영 / 핫슈지원
+                    블루투스 / 손떨림보정 / AF트래킹 / AF미세조정 / 얼굴인식 / 외장플래시포함</figure><br />
+                    <figcaption>
+                        <h5>등록월 2019.07</h5>
+                        <h5>879,000 원</h5>
+                    </figcaption>
+                </nav>
+            </li>
+
+            <li>
+                <a href="imgs/sub41_2.jpg" class="modal"><img src="imgs/sub4_2.jpg"><figure><img src="imgs/sub4_icon.png"> 크게 보기</figure></a>
+                <nav>
+                    <h2><strong>올림푸스</strong> OM-D E-M10</h2><br />
+                    <figure>SLR카메라 / 35mm필름(135포맷) / 렌즈교환식(렌즈포함) / 셀프타이머 / 마운트 미러리스 / 2005만화소 / CMOS 
+                        마이크로포서드(1:2크롭) / 고급형 / TruePic VIII / 컨트라스트AF / 초점영역: 131개 
+                        최고ISO25600 / 셔터:1/4000초 / 초당8.6매
+                        
+                        팝업플래시 / WiFi / 리모컨어플 / SNS공유 / 5축 손떨림보정 / RAW지원 / HDR촬영 / 핫슈지원
+                        듀얼슬롯 / 블루투스 / 손떨림보정 / 얼굴인식 / AF트래킹 / AF미세조정
+                    </figure><br />
+                    <figcaption>
+                        <h5>등록월 2019.11</h5>
+                        <h5>1,104,000 원</h5>
+                    </figcaption>
+                </nav>
+            </li>
+
+            <li>
+                <a href="imgs/sub41_3.jpg" class="modal"><img src="imgs/sub4_3.jpg"><figure><img src="imgs/sub4_icon.png"> 크게 보기</figure></a>
+                <nav>
+                    <h2><strong>올림푸스</strong> OM-D Mark lll</h2><br />
+                    <figure>SLR카메라 / 35mm필름(135포맷) / 렌즈교환식(렌즈포함) / 셀프타이머 / 마운트 미러리스 / 1930만화소 / CMOS 
+                        마이크로포서드(1:2크롭) / 보급형 / TruePic VIII / 7.62cm(3인치) / 틸트형
+                        최고ISO25600 / 셔터:1/4000초 / 초당8.6매 / 컨트라스트AF / 초점영역: 121개 /
+                        
+                        팝업플래시 / WiFi / 리모컨어플 / SNS공유 / 5축 손떨림보정 / RAW지원 / HDR촬영 / 핫슈지원
+                        다중노출 / AF트래킹 / AF미세조정 / 블루투스 / 손떨림보정 / 얼굴인식</figure><br />
+                    <figcaption>
+                        <h5>등록월 2020.07</h5>
+                        <h5>919,000 원</h5>
+                    </figcaption>
+                </nav>
+            </li>
+
+            <li>
+                <a href="imgs/sub41_4.jpg" class="modal"><img src="imgs/sub4_4.jpg"><figure><img src="imgs/sub4_icon.png"> 크게 보기</figure></a>
+                <nav>
+                    <h2><strong>올림푸스</strong> PEN E-PL6</h2><br />
+                    <figure>미러리스 / 접사:3cm / 셀프타이머 / 마운트 미러리스 / 1300만화소 / MOS 
+                        마이크로포서드(1:2크롭) / 보급형 / TruePic VIII / 초당8매 / 컨트라스트AF / 초점영역: 35개 /
+                        플립형 / 셀프촬영 / 터치스크린 /
+                        
+                        팝업플래시 / WiFi / 리모컨어플 / SNS공유 / 5축 손떨림보정 / RAW지원 / HDR촬영 / 핫슈지원
+                        먼지제거 / 손떨림보정 / 인터벌촬영:최대99매,최장24시간 / 얼굴인식</figure><br />
+                    <figcaption>
+                        <h5>등록월 2019.02</h5>
+                        <h5>473,000 원</h5>
+                    </figcaption>
+                </nav>
+            </li>
+
+            <li>
+                <a href="imgs/sub41_5.jpg" class="modal"><img src="imgs/sub4_5.jpg"><figure><img src="imgs/sub4_icon.png"> 크게 보기</figure></a>
+                <nav>
+                    <h2><strong>올림푸스</strong> OM-D E-M1X</h2><br />
+                    <figure>SLR카메라 / 35mm필름(135포맷) / 렌즈교환식(렌즈포함) / 셀프타이머 / 마운트 미러리스 / 2600만화소 / CMOS 
+                        마이크로포서드(1:2크롭) / 고급형 / TruePic VIII
+                        최고ISO25600 / 셔터:1/8000초 / 초당60매 / 하이브리드AF / 초점영역: 121개 / Eye AF /
+                        
+                        팝업플래시 / WiFi / 리모컨어플 / SNS공유 / 5축 손떨림보정 / RAW지원 / HDR촬영 / 핫슈지원
+                        듀얼 화상 처리 엔진 / 저소음모드 / 라이브 ND / OM-Log / 블루투스 / 손떨림보정 / 얼굴인식</figure><br />
+                    <figcaption>
+                        <h5>등록월 2018.02</h5>
+                        <h5>2,039,000 원</h5>
+                    </figcaption>
+                </nav>
+            </li>
+
+            <li>
+                <a href="imgs/sub41_6.jpg" class="modal"><img src="imgs/sub4_6.jpg"><figure><img src="imgs/sub4_icon.png"> 크게 보기</figure></a>
+                <nav>
+                    <h2><strong>올림푸스</strong> μ TOUGH TG-6</h2><br />
+                    <figure>콤팩트 / 셀프타이머 / 마운트 미러리스 / 1305만화소 / CMOS / 광학4배줌 / 밝기:F2.0 / 광각:25mm 
+                        접사:1cm / 마이크로포서드(1:2크롭) / 보급형 / TruePic VIII
+                        최고ISO1600 / 셔터:1/2000초 / 초당5매 / 컨트라스트AF / 초점영역: 25개 /
+                        
+                        팝업플래시 / WiFi / 리모컨어플 / SNS공유 / 5축 손떨림보정 / RAW지원 / HDR촬영 / 핫슈지원
+                        현미경모드 / 방수:15m / 충격흡수:2.1m / 내한(영하10도) / 촬영매수:약 340매 / 얼굴인식</figure><br />
+                    <figcaption>
+                        <h5>등록월 2020.07</h5>
+                        <h5>585,000 원</h5>
+                    </figcaption>
+                </nav>
+            </li>
+
+            <li>
+                <a href="imgs/sub41_7.jpg" class="modal"><img src="imgs/sub4_7.jpg"><figure><img src="imgs/sub4_icon.png"> 크게 보기</figure></a>
+                <nav>
+                    <h2><strong>올림푸스</strong> PEN E-PL9</h2><br />
+                    <figure>미러리스 / 1305만화소 / 마이크로포서드(1:2크롭) / 셀프타이머 / 마운트 미러리스 / 1605만화소 / CMOS 
+                        마이크로포서드(1:2크롭) / 보급형 / TruePic VIII
+                        최고ISO25600 / 셔터:1/4000초 / 초당8.6매 / 컨트라스트AF / 초점영역: 121개 /
+                        
+                        팝업플래시 / WiFi / 리모컨어플 / SNS공유 / 5축 손떨림보정 / RAW지원 / HDR촬영 / 핫슈지원
+                        먼지제거 / 블루투스 / 손떨림보정 / 얼굴인식 </figure><br />
+                    <figcaption>
+                        <h5>등록월 2017.12</h5>
+                        <h5>499,000 원</h5>
+                    </figcaption>
+                </nav>
+            </li>
+
+            <li>
+                <a href="imgs/sub41_8.jpg" class="modal"><img src="imgs/sub4_8.jpg"><figure><img src="imgs/sub4_icon.png"> 크게 보기</figure></a>
+                <nav>
+                    <h2><strong>올림푸스</strong> OM-D Mark l</h2><br />
+                    <figure>SLR카메라 / 35mm필름(135포맷) / 로우패스필터제거 / 마운트 미러리스 / 1730만화소 / CMOS 
+                        마이크로포서드(1:2크롭) / 중급형 / TruePic VIII / 7.62cm(3인치) / 틸트형
+                        최고ISO25600 / 셔터:1/8000초 / 초당10매 / 하이브리드AF / 초점영역: 81개 /
+                        
+                        팝업플래시 / WiFi / 리모컨어플 / SNS공유 / 5축 손떨림보정 / RAW지원 / HDR촬영 / 핫슈지원
+                        다중노출 / AF트래킹 / AF미세조정 / 블루투스 / 손떨림보정 / 얼굴인식</figure><br />
+                    <figcaption>
+                        <h5>등록월 2017.04</h5>
+                        <h5>819,000 원</h5>
+                    </figcaption>
+                </nav>
+            </li>
+        </ul>
+    </div>
+
+    
+
+
+    <footer>
+        <div>
+            <h5>올림푸스 한국㈜ 06655 서울특별시 서초구 서초대로38길12, 
+                2층 및 3층 (서초동, 마제스타시티 타워 원)
+                대표전화 1544-3200│사업자등록번호 220-81-96899</h5>
+            <ul>
+                <li><a href="sub_site.html">사이트 소개</a></li>
+                <li><a href="sub_map.html">찾아오시는 길</a></li>
+            </ul>
+            <ul>
+                <li><a href="sub_science.html">사이언스 솔루션</a></li>
+                <li><a href="sub_science.html">현미경 솔루션</a></li>
+                <li><a href="sub_videoscope.html">산업 내시경</a></li>
+                <li><a href="sub_videoscope.html">산업용 Videoscopes</a></li>
+                <li><a href="sub_camera.html">올림푸스 카메라</a></li>
+            </ul>
+            <a href="sub_join.html">견적 및 A/S 문의</a>
+
+            <span>
+                <a href="https://www.facebook.com/"></a>
+                <a href="https://www.instagram.com/"></a>
+                <a href="https://twitter.com/?lang=ko"></a>
+            </span>
+        </div>
+
+        <div>©COPYRIGHT. 2020 OLYMPUS KOREA CO., LTD. ALL RIGHT RESERVED.</div>
+    </footer>
+
+
+
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- 헤드룸 -->
+    <script src="plugins/headroom/features.js"></script>
+    <script src="plugins/headroom/Debouncer.js"></script>
+    <script src="plugins/headroom/Headroom.js"></script>
+    <script src="plugins/headroom/jQuery.headroom.js"></script>
+    <!-- 이미지 박스 -->
+	<script type="text/javascript">
+		$(function() {
+            $("#site-header").headroom({
+                tolerance: 10,
+                offset: 950,   
+                classes: {   
+                    initial: "animated",      
+                    pinned: "slideInDown",     
+                    unpinned: "slideOutUp",     
+                    top: "headroom--top",      
+                    notTop: "headroom--not-top" 
+                }
+            });
+
+            $(".modal").click(function(e) {
+                e.preventDefault();             // 페이지 이동 방지
+                $("#background").fadeIn(300);   // 배경 레이어를 화면에 표시한다.
+                $("#front").fadeIn(200);        // 이미지 레이어를 화면에 표시한다.
+                var src = $(this).attr("href"); // 클릭한 링크의 href속성값=이미지경로
+                var img = "<img src='" + src + "' />"; // 이미지 태그 구성
+                $("#front").html(img);          // 구성한 이미지 태그를 이미지 레이어에 표시
+            });
+
+            /** (화면에 표시된) 배경 레이어를 클릭한 경우 */
+            $("#background").click(function() {
+                $(this).fadeOut(300);       // 배경 레이어의 숨김
+                $("#front").fadeOut(200);   // 이미지 레이어의 숨김
+            });
+		});
+	</script>
+</body>
+</html>

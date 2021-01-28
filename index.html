@@ -4,192 +4,323 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;800&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
-        * {margin: 0;
-            box-sizing: border-box;
-            font-family: 'Karla', sans-serif;
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="plugins/stylesheets/superslides.css">
+    <link rel="stylesheet" href="plugins/animate/animate.css" />
+    <style type="text/css">
+
+        .slide_box {width: 100%; margin: 0 auto;
+            z-index: 1; padding-top: 90px;
         }
-        div, h1, h2, p {margin: 0;}
-        ul, li {list-style: none; margin: 0;}
-        a {text-decoration: none;}
-        img {width: 100%;}
 
-        header {width: 1060px; margin: 0 auto;}
+        .slide_box div:nth-of-type(2) {
+            position: fixed;
+            top: 20%; right: 3%;
+            z-index: 999;
+        }
+        .slide_box div:nth-of-type(2) a img {
+            width: 120px;
+            background: #eee;
+            border-radius: 100%;
+            
+        }
+        .slide_box div:nth-of-type(2) a img:hover {
+            background: hotpink;
+        }
 
-        .top {width: 100%; margin: 40px 0;
-            display: flex; justify-content: space-between;}
-        .top h1 {font-size: 36px; font-family: 'Lora', serif;}
-        .top nav a {line-height: 50px;
-            color: #626262; font-weight: bold;}
-        .top nav a:hover {color: pink}
-        .top nav a:nth-of-type(1),
-        .top nav a:nth-of-type(2),
-        .top nav a:nth-of-type(3) {margin-right: 30px;}
-
-        .slide {width: 1060px; margin: 0 auto;}
-
-        main {width: 890px; margin: 0 auto;}
-        .container {white-space: pre-line; margin-top: 70px;}
-        main p:nth-of-type(1) {color: #b4ad9e;}
-        main p:nth-of-type(2) {font-size: 12px; color: #777777;}
-        main h2 {font-size: 27px; font-family: 'Lora', serif; font-weight: lighter;}
-
-        .thumb {margin-top: 50px; display: flex; flex-wrap: wrap;
-            justify-content: space-between;}
-        .thumb article {white-space: pre-line; width: 420px;
-            }
-        .thumb article:nth-of-type(3),
-        .thumb article:nth-of-type(4) {margin-top: 70px;}
-
-        .form {width: 1200px; height: 280px; margin: 0 auto;
-            background: #f0f0f0; 
-            padding: 90px;}
-     
-
-        .form h2 {text-align: center; font-weight: lighter;
-            color: #333333; font-size: 30px; font-family: 'Lora', serif;
-            }
-        .form span {position: relative;}
-        .form span::after {content: ''; clear: both; display: block;}
-        .form span input {width: 370px; height: 40px; 
-            margin: 0 auto; display: block; border: 0px; 
-            border-bottom: 2px solid #000; background: #f0f0f0;}
-        .form span input::placeholder {color: #878787;}
-
-        .form span label { 
-            position: absolute; top: 10px; left: 663px;
-            width: 32px; height: 17px;
-            background: url('imgs/0107_icon.png') no-repeat;
-            display: inline-block;}
-        .form span input + label {background: url('imgs/0107_icon.png') no-repeat;}
-
-        .copy {width: 890px; height: 90px; margin: 0 auto;
-            }
-        .copy figure {height: 90px; display: flex; 
+        main {width: 75%; margin: 0 auto;}
+        main .thumb {
+            display: flex;
             justify-content: space-between;
-            align-items: center;
-            }
-        .copy figure nav {line-height: 10px;}
-        
-        .copy figure nav a {color: #777777;}
-        .copy figure nav a:hover {color: pink;}
-        .copy figure nav:nth-of-type(1) a:nth-of-type(2) {margin: 0 20px;}
-        .foot_text {margin: 0 20px;}
+            margin: 110px 0;
+        }
+        main .thumb nav {
+            width: 45%;
+            height: 700px;
+        }
+        main .thumb nav img {
+            width: 90%;
+            margin: 5% 0 0 5%;
+        }
+        main .thumb nav h3, p {
+            width: 90%;
+            margin: 5% 0 0 5%;
+        }
+        main .thumb nav:hover,
+        main .thumb nav:hover p a {
 
-        .copy figure nav span {vertical-align: middle;}
-        .copy figure nav span a {width: 20px; height: 18px;
-            background: url('imgs/0105_icon.png') no-repeat;
-            display: inline-block; }
-        .copy figure nav span a:nth-of-type(1) {background-position: 4px 0px;}
-        .copy figure nav span a:nth-of-type(2) {background-position: -31px 0px;}
-        .copy figure nav span a:nth-of-type(3) {background-position: -68px 0px;}
-        .copy figure nav span a:hover {background-position-y: -34px;}
+            background: #aeafc7;
+            border: 1px solid white;
+            border-radius: 10px;
+        }
+        main .thumb nav h3 {margin-top: 20px;
+            white-space: pre-line;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        main .thumb nav h3 strong {font-size: 24px;}
+        main .thumb nav p {font-size: 15px;
+            font-weight: bold;
+            line-height: 24px;
+            /* margin: 40px 0px 60px 0px; */
+        }
+        main .thumb nav p:nth-of-type(1) {
+            color: #555;
+        }
+        main .thumb nav p:nth-of-type(2) {
+            margin-top: 10%;
+        }
+        main .thumb nav p a {
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 1px solid #272a71;
+            font-size: 14px;
+            color: black;
+            font-weight: bold;
+        }
+        main .thumb nav p a:hover {
+            background: #272a71; color: #eee;
+            border: none;
+        }
+
+
+        .camera {margin-bottom: 120px; position: relative;}
+        .camera::after {content: ''; clear: both; display: block;}
+        .camera img:nth-of-type(1) {margin: 0 0 50px 0;}
+        .camera h3 {position: absolute;
+            top: 300px; left: 50px;
+            white-space: pre-line;
+            line-height: 60px;
+            font-size: 28px;
+            font-family: 'Lora', serif;
+        }
+        .camera h3 strong {color: #272a71;
+            font-size: 36px;
+            font-weight: normal;
+            font-family: 'Do Hyeon', sans-serif;
+        }
+        .camera p:nth-of-type(2) {font-size: 14px; font-weight: bold;}
+
+
+        .photo {width: 100%; background: #eee;
+            position: relative;
+        }
+        .photo::after {content: '';
+            clear: both; display: block;
+        }
+        .photo div {
+            width: 75%; height: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .photo div h3 {
+            position: absolute;
+            top: 110px; left: 1060px;
+            white-space: pre-line;
+            font-size: 26px;
+            line-height: 40px;
+            font-family: 'Nanum Brush Script', cursive;
+            font-weight: lighter;
+        }
+        .photo div h3 strong{font-size: 24px;
+            font-family: 'Do Hyeon', sans-serif;
+        }
+        .photo div h4 {
+            position: absolute;
+            bottom: 12%; left: 70px;
+            white-space: pre-line;
+        }
+        .photo div img:nth-of-type(1) {
+            width: 990px;
+            position: absolute;
+            left: 0; top: 60px;
+        }
+        .photo div img:nth-of-type(2) {
+            width: 750px;
+            position: absolute;
+            right: 0; bottom: 30px;
+        }
+        .photo img {position: absolute;
+            bottom: 0px; z-index: 0;
+        }
+
+
+        @media (max-width:1750px) {
+            .photo div {width: 1300px; margin: 0 auto;}
+            .photo div h3 {left: 1010px;}
+            .photo div h4 {bottom: 90px; left: 70px;}
+        }
 
     </style>
 </head>
-
 <body>
-    <header>
-        <div class="top">
-            <h1>MINIMO</h1>
-            <nav>
-                <a href="#">LIFESTYLE</a>
-                <a href="#">PHOTODIARY</a>
-                <a href="#">MUSIC</a>
-                <a href="#">TRAVEL</a>
-            </nav>
+    <header id="site-header">
+        <div>
+            <a href="index.html"><img src="imgs/logo_1.jpg"></a>
+            <ul class="menu">
+                <li>
+                    <a href="sub_site.html">사이트 소개</a>
+                    <span>
+                        <a href="sub_site.html">사이트 소개</a>
+                        <a href="sub_map.html">찾아오시는 길</a>
+                    </span>
+                </li>
+        
+                <li>
+                    <a href="sub_science.html">사이언스 솔루션</a>
+                    <span>
+                        <a href="sub_science.html">현미경 솔루션</a>
+                    </span>
+                </li>
+        
+                <li>
+                    <a href="#">제품 보기</a>
+                    <span>
+                        <a href="sub_videoscope.html">산업 내시경</a>
+                        <a href="sub_camera.html">디지털 카메라</a>
+                    </span>
+                </li>
+        
+                <li>
+                    <a href="sub_join.html">견적 및 A/S 문의</a>
+                    <span>
+                        <a href="sub_join.html">견적 및 A/S 문의</a>
+                    </span>
+                </li>
+            </ul>
         </div>
     </header>
 
-    <div class="slide"><img src="imgs/0107_main.jpg"></div>
+    <div class="slide_box">
+        <div id="slides">
+            <ul class="slides-container">
+                <li><img src="imgs/slide1.jpg"></li>
+                <li><img src="imgs/slide2.jpg" usemap="#navi"></li>
+                <li><img src="imgs/slide3.jpg"></li>
+            </ul>
+        </div>
+        <div><a href="sub_camera.html"><img src="imgs/fixed3.png"></a></div>
+        <map name="navi" id="navi">
+            <area href="sub_videoscope.html" shape="rect" coords="1560, 329, 1710, 389" target="_blank">
+            <area href="sub_science.html" shape="rect" coords="420, 680, 570, 737" target="_blank">
+        </map>
+    </div>
+
 
     <main>
-        <figure class="container">
-            <p>photodiary</p>
-            <h2>The perfect weekend getaway</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde
-                omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto 
-                beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui 
-                ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius
-                modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-        </figure>
-
         <div class="thumb">
-            <article>
-                <img src="imgs/0107_thumb1.jpg">
-                <br />
-                <p>Lifestyle</p>
-                <h2>More than just a music festival</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</p>
-            </article>
-            <article>
-                <img src="imgs/0107_thumb2.jpg">
-                <br />
-                <p>Lifestyle</p>
-                <h2>Life tastes better with coffee</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</p>
-            </article>
-            <article>
-                <img src="imgs/0107_thumb3.jpg">
-                <br />
-                <p>Lifestyle</p>
-                <h2>American dream</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</p>
-            </article>
-            <article>
-                <img src="imgs/0107_thumb4.jpg">
-                <br />
-                <p>Lifestyle</p>
-                <h2>A day exploring the Alps</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</p>
-            </article>
+            <nav>
+                <img src="imgs/thumb1.jpg">
+                <h3><strong>IPLEX Videoscopes</strong>
+                    산업 내시경</h3>
+                <p>다양한 길이와외겨을지닌 산업용 Videoscopes시스템은 최첨단 검사환경에 
+                    적합하도록설계되었습니다. Videoscopes, Fiberscopes, Borescopes제품군은
+                    다양한 검사조건을 충족 시킬 수 있는 다재 다능한 검사 시스템입니다.</p>
+                <p><a href="sub_videoscope.html">제품 보기</a></p>
+            </nav>
+            <nav>
+                <img src="imgs/thumb2.jpg">
+                <h3><strong>Science Solution</strong>
+                    모듈 현미경 솔루션</h3>
+                <p>OLYMPUS SZX/SZ 시리즈 실체 현미경은 선명하고 입체적인 화면을 제공하며 
+                    편안하며 인체공학적인 디자인을 갖추었습니다. 광범위한 애플리케이션에 따라 저배율부터 
+                    고배율에 이르기까지 다양한 바디와 광학기능을 자유롭게 선택할 수 있습니다.</p>
+                <p><a href="sub_science.html">바로 가기</a></p>
+            </nav>
+        </div>
+
+        <div class="camera">
+            <img src="imgs/line_index.jpg">        
+            <img src="imgs/index_camera1.jpg">
+            <h3><strong>물속에서도 자유롭게! 
+                올림푸스</strong> μ TOUGH TG-4</h3>
+            <!-- <p><a href="sub_camera.html">제품 보기</a></p> -->
+            <p>수심 20m 방수와 Full HD 1080p 비디오 촬영 2.1m 충격흡수 등 올림푸스 TOUGH TG-4는 어떠한 환경에서도 생동감 있는 영상을 기록할 수 있습니다</p>
         </div>
     </main>
-    <br />
-    <br />
+
+    <div class="photo">
+        <div>
+            <img src="imgs/index_camera2.png">
+            <img src="imgs/index_camera3.png">
+            <!-- <img src="imgs/line_index2.jpg"> -->
+            <h3><strong>나만의사진을 남겨 보세요 !</strong>
+                상황에 따라 다양한 선택이
+                가능한 올림푸스 카메라로
+                잊지못할 추억을 남겨보세요</h3>
+            <h4>나만의 알고 있는 사진 찍는 방법이나 포토존을
+                공유해 보세요! 추첨을 통해 다양한 상품을 드리니
+                이벤트 소식을 놓치지 마세요</h4>
+        </div>
+        <img src="imgs/line_index2.jpg">
+    </div>
 
     <footer>
-        <div class="form">
-            <h2>Sign up for our newsletter!</h2>
+        <div>
+            <h5>올림푸스 한국㈜ 06655 서울특별시 서초구 서초대로38길12, 
+                2층 및 3층 (서초동, 마제스타시티 타워 원)
+                대표전화 1544-3200│사업자등록번호 220-81-96899</h5>
+            <ul>
+                <li><a href="sub_site.html">사이트 소개</a></li>
+                <li><a href="sub_map.html">찾아오시는 길</a></li>
+            </ul>
+            <ul>
+                <li><a href="sub_science.html">사이언스 솔루션</a></li>
+                <li><a href="sub_science.html">현미경 솔루션</a></li>
+                <li><a href="sub_videoscope.html">산업 내시경</a></li>
+                <li><a href="sub_videoscope.html">산업용 Videoscopes</a></li>
+                <li><a href="sub_camera.html">올림푸스 카메라</a></li>
+            </ul>
+            <a href="sub_join.html">견적 및 A/S 문의</a>
+
             <span>
-                <input type="text" name="email" placeholder="Enter a valid email address" id="email">
-                <label for="email"></label>
+                <a href="https://www.facebook.com/"></a>
+                <a href="https://www.instagram.com/"></a>
+                <a href="https://twitter.com/?lang=ko"></a>
             </span>
         </div>
 
-        <div class="copy">
-            <figure>
-                <nav>
-                    <a href="#">Terms and conditions</a>
-                    <a href="#">Privacy</a>
-                </nav>
-                <nav>
-                    <a href="#" class="foot_text">Follow</a>
-                    <span>
-                        <a href="#"></a>
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </span>
-                </nav>
-            </figure>
-        </div>
+        <div>©COPYRIGHT. 2020 OLYMPUS KOREA CO., LTD. ALL RIGHT RESERVED.</div>
     </footer>
+
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- 슬라이드 -->
+    <script src="plugins/jquery.superslides.min.js"></script>
+    <!-- 헤드룸 -->
+    <script src="plugins/headroom/features.js"></script>
+    <script src="plugins/headroom/Debouncer.js"></script>
+    <script src="plugins/headroom/Headroom.js"></script>
+    <script src="plugins/headroom/jQuery.headroom.js"></script>
+    <!-- 맵 내비 -->
+    <script src="plugins/jquery.rwdImageMaps.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('#slides').superslides({
+                
+                play: 4000,          
+                animation: 'slide'   
+            });
+
+
+            $("#site-header").headroom({
+                tolerance: 10,
+                offset: 950,   
+                classes: {   
+                    initial: "animated",      
+                    pinned: "slideInDown",     
+                    unpinned: "slideOutUp",     
+                    top: "headroom--top",      
+                    notTop: "headroom--not-top" 
+                }
+            });
+
+            $(document).ready(function(e){
+				$('img[usemap]').rwdImageMaps();
+			});
+		});
+	</script>
 </body>
 </html>
