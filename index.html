@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>OLYMPUS</title>
+    <link rel="shortcut icon" type="image/x-icon" href="imgs/olym.ico">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="plugins/stylesheets/superslides.css">
     <link rel="stylesheet" href="plugins/animate/animate.css" />
@@ -18,15 +19,31 @@
             top: 20%; right: 3%;
             z-index: 999;
         }
+        .slide_box div:nth-of-type(2) a {
+            width: 120px; height: 120px;  
+        }
         .slide_box div:nth-of-type(2) a img {
-            width: 120px;
+            width: 120px; height: 120px;
             background: #eee;
             border-radius: 100%;
-            
+            animation: jump 1.2s infinite linear;
+        }
+        @keyframes jump{ 0%{transform: translateY(1px); transition: 1s;}
+            100%{transform: translateY(-6px);}
         }
         .slide_box div:nth-of-type(2) a img:hover {
-            background: hotpink;
-        }
+            animation: none;
+            background: rgb(135, 135, 221);
+            transform: translateY(-5px);
+            transition: .5s;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+        } 
+
+
+
+
+
+
 
         main {width: 75%; margin: 0 auto;}
         main .thumb {
@@ -38,6 +55,29 @@
             width: 45%;
             height: 700px;
         }
+
+
+        /* main .thumb nav:nth-of-type(1) {
+            transform: translate(-1000px, 0px);
+            transition: 1s;
+        }
+        main .thumb nav:nth-of-type(2) {
+            transform: translate(-2000px, 0px);
+            transition: 1.5s;
+        }
+
+
+        main .thumb:hover nav:nth-of-type(1) {
+            transform: translate(0px, 0px);
+            transition: 1.2s;
+        }
+        main .thumb:hover nav:nth-of-type(2) {
+            transform: translate(0px, 0px);
+            transition: 1.7s;
+        }
+         */
+
+
         main .thumb nav img {
             width: 90%;
             margin: 5% 0 0 5%;
@@ -48,11 +88,11 @@
         }
         main .thumb nav:hover,
         main .thumb nav:hover p a {
-
             background: #aeafc7;
             border: 1px solid white;
             border-radius: 10px;
-        }
+            transition: 1s;
+        } 
         main .thumb nav h3 {margin-top: 20px;
             white-space: pre-line;
             font-family: 'Noto Sans KR', sans-serif;
@@ -86,23 +126,50 @@
         .camera {margin-bottom: 120px; position: relative;}
         .camera::after {content: ''; clear: both; display: block;}
         .camera img:nth-of-type(1) {margin: 0 0 50px 0;}
-        .camera h3 {position: absolute;
-            top: 300px; left: 50px;
+        /* .camera h3 {position: absolute;
+            top: 100px; left: 50px;
             white-space: pre-line;
             line-height: 60px;
             font-size: 28px;
             font-family: 'Lora', serif;
+            z-index: 10;
         }
         .camera h3 strong {color: #272a71;
             font-size: 36px;
             font-weight: normal;
             font-family: 'Do Hyeon', sans-serif;
         }
-        .camera p:nth-of-type(2) {font-size: 14px; font-weight: bold;}
+        .camera p:nth-of-type(2) {font-size: 14px; font-weight: bold;} */
 
 
-        .photo {width: 100%; background: #eee;
+        .gray_layer {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 10;
+            display: none;
+        }
+        /** 이미지가 표현될 레이어를 화면 중앙에 배치 > 기본적으로 표시되지 않도록 설정 */
+        .over_layer {
+            /* 요소의 좌측상단 꼭지점이 화면 중앙에 위치하게 된다. */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            /* 요소의 크기/2 만큼 왼쪽,상단 방향으로 이동시켜 가운데 배치한다 */
+            margin-top: -244px;
+            margin-left: -325px;
+            display: none;
+            z-index: 10;
+            
+        }
+
+
+
+        .photo {width: 100%; background: #f6f6f6;
             position: relative;
+            margin-top: 100px;
         }
         .photo::after {content: '';
             clear: both; display: block;
@@ -134,21 +201,127 @@
             width: 990px;
             position: absolute;
             left: 0; top: 60px;
+
+            transform: translate(0px);
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0);
+            transition: 0.5s ;
         }
         .photo div img:nth-of-type(2) {
             width: 750px;
             position: absolute;
             right: 0; bottom: 30px;
+
+            transform: translate(0px);
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0);
+            transition: 0.5s ;
         }
         .photo img {position: absolute;
             bottom: 0px; z-index: 0;
         }
 
+        .photo div img:nth-of-type(1):hover {
+            transform: translate(-20px, -20px);
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+            z-index: 2;
+        }
+        .photo div img:nth-of-type(2):hover {
+            transform: translate(20px, -20px);
+            box-shadow: 10px 10px 10px rgba(0.4, 0, 0, 0);
+        }
 
+        
+        /* 
         @media (max-width:1750px) {
             .photo div {width: 1300px; margin: 0 auto;}
             .photo div h3 {left: 1010px;}
             .photo div h4 {bottom: 90px; left: 70px;}
+        } */
+
+
+
+        /* 모바일 태블릿 */
+        .head_mobile {width: 100%;
+            height: 90px;
+            background: white;
+            margin: 0 auto;
+            position: fixed; 
+            top: 0; left: 0; z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid black;
+            display: none;
+        }
+        .head_mobile a img {width: 195px;}
+        .head_mobile a:nth-of-type(2) {
+            width: 70px; height: 70px;
+            margin: 10px 10px 0 0;
+            position: relative;
+        }
+        .head_mobile a span {cursor: pointer;
+            width: 20px;
+            height: 10px;
+        }
+        .head_mobile a span nav:nth-of-type(1) {
+            margin-top: 16px;
+        }
+        .head_mobile a span nav:nth-of-type(2) {
+            margin: 10px 0 10px 5px;
+        }
+        .head_mobile a span nav {
+            width: 60px; height: 6px;
+            background: black;
+            border-radius: 3px;
+            margin-left: 5px;
+        }
+
+
+        .menu_none {width: 400px;
+            background: black;
+            opacity: 0.5;
+            height: 480px;
+            position: absolute;
+            top: 70px; right: 0;
+        }
+        .menu_none li {         
+            height: 70px;
+            text-align: right;
+            margin-right: 30px;
+        }
+        .menu_none li:nth-of-type(1) {
+            margin: 40px 20px 0 0;
+        } 
+        .menu_none li a {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .menu_none {display: none;}
+        .menu_none.on {display: inline;}
+
+
+
+        @media (max-width:1600px) {         
+        }
+        @media (min-width: 1000px) and (max-width: 1279px) {
+        }
+
+        @media (min-width: 480px) and (max-width: 999px) {
+            /* 헤더 푸터 */
+            header {display: none;}
+            .head_mobile {display: flex;}
+
+            /* footer div ul, a {display: none;} */
+            footer div:nth-of-type(1) h5 {
+                width: 60%;}
+            footer div:nth-of-type(1) span {width: 30%;}
+            footer div:nth-of-type(1) span a:nth-of-type(2) {
+                margin: 0 5px 0 5px;}
+            
+            /* 고정 카메라 */
+            .slide_box div:nth-of-type(2) {
+                display: none;
+            }
         }
 
     </style>
@@ -190,20 +363,36 @@
             </ul>
         </div>
     </header>
+    <!-- 모바일 태블릿 메뉴 -->
+    <div class="head_mobile">
+        <a href="#"><img src="imgs/logo_mobile.jpg"></a>
+        <a href="#" id="button">
+            <span>
+                <nav></nav>
+                <nav></nav>
+                <nav></nav>
+            </span>
+
+            <ul class="menu_none">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sub_science.html">Science Solution</a></li>
+                <li><a href="sub_videoscope.html">VideoScope</a></li>
+                <li><a href="sub_camera.html">OLYMPUS camera</a></li>
+                <li><a href="sub_join.html">A/s order</a></li>
+                <li><a href="sub_map.html">Site Map</a></li>
+            </ul>
+        </a>
+    </div>
 
     <div class="slide_box">
         <div id="slides">
             <ul class="slides-container">
                 <li><img src="imgs/slide1.jpg"></li>
-                <li><img src="imgs/slide2.jpg" usemap="#navi"></li>
+                <li><img src="imgs/slide2_3.jpg"></li>
                 <li><img src="imgs/slide3.jpg"></li>
             </ul>
         </div>
         <div><a href="sub_camera.html"><img src="imgs/fixed3.png"></a></div>
-        <map name="navi" id="navi">
-            <area href="sub_videoscope.html" shape="rect" coords="1560, 329, 1710, 389" target="_blank">
-            <area href="sub_science.html" shape="rect" coords="420, 680, 570, 737" target="_blank">
-        </map>
     </div>
 
 
@@ -229,14 +418,22 @@
             </nav>
         </div>
 
-        <div class="camera">
-            <img src="imgs/line_index.jpg">        
-            <img src="imgs/index_camera1.jpg">
-            <h3><strong>물속에서도 자유롭게! 
-                올림푸스</strong> μ TOUGH TG-4</h3>
-            <!-- <p><a href="sub_camera.html">제품 보기</a></p> -->
-            <p>수심 20m 방수와 Full HD 1080p 비디오 촬영 2.1m 충격흡수 등 올림푸스 TOUGH TG-4는 어떠한 환경에서도 생동감 있는 영상을 기록할 수 있습니다</p>
-        </div>
+
+
+        <map class="camera" name="navi" id="navi">
+            <img src="imgs/line_index.jpg">
+            <!-- <h3><strong>물속에서도 자유롭게! 
+                올림푸스</strong> μ TOUGH TG-4</h3> -->
+            <figure class='gray_layer' id='background'></figure>
+            <figure class='over_layer' id='front'></figure>
+            <nav>
+                <area href="imgs/index_camera_01.png" shape="rect" coords="724, 197, 767, 240" target="_blank" class="modal"><img src="imgs/index_camera01.jpg" usemap="#navi">
+                <area href="imgs/index_camera_02.png" shape="rect" coords="944, 441, 995, 490" target="_blank" class="modal"><img usemap="#navi">
+                <area href="imgs/index_camera_03.png" shape="rect" coords="1141, 315, 1188, 365" target="_blank" class="modal"><img  usemap="#navi">
+            </nav>
+            <!-- <area class="#" href="#" shape="rect" coords="756, 215, 815, 245" target="_blank">
+            <area href="#" shape="rect" coords="420, 680, 570, 737" target="_blank"> -->
+        </map>
     </main>
 
     <div class="photo">
@@ -320,6 +517,35 @@
             $(document).ready(function(e){
 				$('img[usemap]').rwdImageMaps();
 			});
+
+            $(".modal").click(function(e) {
+                e.preventDefault();             // 페이지 이동 방지
+                $("#background").fadeIn(300);   // 배경 레이어를 화면에 표시한다.
+                $("#front").fadeIn(200);        // 이미지 레이어를 화면에 표시한다.
+                var src = $(this).attr("href"); // 클릭한 링크의 href속성값=이미지경로
+                var img = "<img src='" + src + "' />"; // 이미지 태그 구성
+                $("#front").html(img);          // 구성한 이미지 태그를 이미지 레이어에 표시
+
+                
+            });
+
+            $("#background").click(function() {
+                $(this).fadeOut(300);       // 배경 레이어의 숨김
+                $("#front").fadeOut(200);   // 이미지 레이어의 숨김
+            });
+
+
+            $(window).scroll(function() {
+                $("#background").fadeOut(300);    
+                $("#front").fadeOut(200);
+            }); // end scroll
+            
+
+            // 모바일 태블릿 메뉴 클릭 
+            $("#button").click(function(){
+				$(".menu_none").toggleClass('on');
+			});	
+
 		});
 	</script>
 </body>

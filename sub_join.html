@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>OLYMPUS</title>
+    <link rel="shortcut icon" type="image/x-icon" href="imgs/olym.ico">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="plugins/animate/animate.css" />
     <style type="text/css">
@@ -13,106 +14,125 @@
             top: 20%; right: 3%;
             z-index: 999;
         }
+        .fixed a {width: 120px; height: 120px;}
         .fixed a img {
-            width: 120px;
+            width: 120px; height: 120px;
             background: #eee;
-            border-radius: 100%;            
+            border-radius: 100%;
+            animation: jump 1.2s infinite linear;        
         }
-        .fixed a img:hover {background: hotpink;}
+        .fixed a img:hover {
+            animation: none;
+            background: rgb(135, 135, 221);
+            transform: translateY(-5px);
+            transition: .5s;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+        }
+        @keyframes jump{ 0%{transform: translateY(1px); transition: 1s;}
+            100%{transform: translateY(-6px);}
+        }
+
         .top_sub {width: 75%; margin: 0 auto;
             display: flex; justify-content: space-between;
         }
         .top_sub h2 {margin-top: 130px;
         }
-        .top_sub div {width: 80%;
+        .top_sub div {
             height: 147px;
             border-bottom: 2px solid #272a71;
+            animation: line2 1.5s linear forwards;
         }
+        @keyframes line2{ 0%{width: 1%; transition: 1s;}
+            100%{width: 80%;}}
 
 
         /*  */
         .main_sub5 {width: 65%;
+            height: 1200px;
             margin: 0 auto;
         }
-        .main_sub5 div {width: 100%;
+        .main_sub5 form div:nth-of-type(1) {width: 100%;
             height: 300px;
             background: #eee;
             margin: 70px 0 70px 0;
             display: flex;
             justify-content: space-between;
         }
-        .main_sub5 div figure {width: 45%;
+        .main_sub5 form div:nth-of-type(1) figure {width: 45%;
             margin: 2% 2% 0 2%;
         }
-        .main_sub5 div figure h4 {
+        .main_sub5 form div:nth-of-type(1) figure h4 {
             white-space: pre-line;
             font-size: 20px;
             font-family: 'Noto Sans KR', sans-serif;
         }
-        .main_sub5 div figure:nth-of-type(2) h4:nth-of-type(2) {
+        .main_sub5 form div:nth-of-type(1) figure:nth-of-type(2) h4:nth-of-type(2) {
             font-size: 16px;
         }
-        .main_sub5 div figure h5 {
+        .main_sub5 form div:nth-of-type(1) figure h5 {
             white-space: pre-line;
             margin-left: 2%;
         }
-        .main_sub5 div figure form {
+        .main_sub5 form div:nth-of-type(1) figure form {
             margin: 2% 0 0 5%;
         }
-        .main_sub5 div figure form span {
+        .main_sub5 form div:nth-of-type(1) figure form span {
             font-size: 14px;
         }
-        .main_sub5 div figure .check_box {
+        .main_sub5 form div:nth-of-type(1) figure .check_box {
             color: red;
         }
 
 
-        .line_join {width: 75%;
-            border: 1px solid black;
-            margin: 0 auto;
-        }
 
-        .join {width: 65%;
-            margin: 0 auto;
-            height: 900px;
-            background: #eee;          
-        }
-        .join .jointable {
-            margin-top: 110px;
-            height: 900px;
+
+
+
+
+
+
+
+
+
+
+        .main_sub5 form div:nth-of-type(2) {
+            height: 700px;
+            background: #eee;
             border-top: 1px solid black;
             border-bottom: 1px solid black;
         }
-        .join .jointable div {
+        .main_sub5 form div:nth-of-type(2) figure {
             display: flex;
             justify-content: space-between;
             margin: 0 25% 0 5%;
         }
-
-        .join .jointable div:nth-of-type(2) span {
-            width: 35%;
-        }
-        .join .jointable div:nth-of-type(4) span:nth-of-type(1) input {
-            width: 400px;
-        }
-        .join .jointable div:nth-of-type(5) span:nth-of-type(1) input {
-            width: 400px;
-        }
-        .join .jointable div:nth-of-type(6) span:nth-of-type(1) input {
-            width: 800px;
-        }
-        .join .jointable div:nth-of-type(7) span:nth-of-type(1) input {
-            width: 800px; height: 200px;
-        }
-        .join .jointable div label {
+        .main_sub5 form div:nth-of-type(2) figure label {
             width: 10%;
             margin-top: 5%;
             font-family: 'Noto Sans KR', sans-serif;
         }
-        .join .jointable div span {
+        .main_sub5 form div:nth-of-type(2) figure span {
             width: 80%;
             margin-top: 4%;
         }
+
+        .main_sub5 form div:nth-of-type(2) figure:nth-of-type(2) span {
+            width: 35%;
+        }
+        .main_sub5 form div:nth-of-type(2) figure:nth-of-type(3) span:nth-of-type(1) input {
+            width: 400px;
+        }
+        .main_sub5 form div:nth-of-type(2) figure:nth-of-type(4) span:nth-of-type(1) input {
+            width: 400px;
+        }
+        .main_sub5 form div:nth-of-type(2) figure:nth-of-type(5) span:nth-of-type(1) input {
+            width: 800px;
+        }
+        .main_sub5 form div:nth-of-type(2) figure:nth-of-type(6) span:nth-of-type(1) input {
+            width: 800px; height: 200px;
+        }
+
+
         .col-md-2 {height: 30px; 
             font-size: 15px; line-height: 30px;
         }
@@ -122,10 +142,12 @@
             border: 1px solid #333366;
         }
 
-        .join .jointable div:nth-of-type(8) {
-            width: 85%;
+        .main_sub5 form div:nth-of-type(3) {
+            height: 60px;
+            text-align: center;
+            margin-top: 30px;
         }
-        .join .jointable div:nth-of-type(8) .join_button {
+        .main_sub5 form div:nth-of-type(3) .join_button {
             width: 150px; height: 40px;
 			text-align: center;
             line-height: 40px;
@@ -178,100 +200,83 @@
 
 
     <div class="main_sub5">
-        <div>
-            <figure>
-                <h4> 개인정보 수집·이용에 관한 사항 </h4><br />
-                <h5>수집하는 개인정보 항목
-
-                    수집항목 : 이름 ,비밀번호 ,이메일 ,연락처 , 소속 , 제품 사용여부 ,사용제품 모델명</h5><br />
-                <h4>수집 및 이용목적</h4><br />
-                <h5>서비스 제공에 관한 계약이행 및 서비스 제공
-                    회원제 서비스 이용에 따른 개인 식별, 비인가 사용방지
-                    이벤트 및 광고성 정보 전달</h5>
-            </figure>
-
-            <figure>
-                <h4>개인정보의 보유 및 이용기간</h4><br />
-                <h5>개인정보 수집 및 이용목적이 달성된 후에는 예외 없이 해당 정보를 
-                    지체없이 파기합니다.</h5><br /><br />
-                <h4>서비스 제공을 위해 필요한 최소한의 개인정보이므로 
-                    동의를 해주셔야 서비스를 이용하실 수 있습니다.</h4><br />
-                <h5>개인정보의 수집 이용에 관한 사항에 동의하십니까?</h5>
-                <form form name="join_check" id="join_check">
+        <form name="join_form" id="join_form">
+            <div>
+                <figure>
+                    <h4> 개인정보 수집·이용에 관한 사항 </h4><br />
+                    <h5>수집하는 개인정보 항목
+    
+                        수집항목 : 이름 ,비밀번호 ,이메일 ,연락처 , 소속 , 제품 사용여부 ,사용제품 모델명</h5><br />
+                    <h4>수집 및 이용목적</h4><br />
+                    <h5>서비스 제공에 관한 계약이행 및 서비스 제공
+                        회원제 서비스 이용에 따른 개인 식별, 비인가 사용방지
+                        이벤트 및 광고성 정보 전달</h5>
+                </figure>
+    
+                <figure>
+                    <h4>개인정보의 보유 및 이용기간</h4><br />
+                    <h5>개인정보 수집 및 이용목적이 달성된 후에는 예외 없이 해당 정보를 
+                        지체없이 파기합니다.</h5><br /><br />
+                    <h4>서비스 제공을 위해 필요한 최소한의 개인정보이므로 
+                        동의를 해주셔야 서비스를 이용하실 수 있습니다.</h4><br />
+                    <h5>개인정보의 수집 이용에 관한 사항에 동의하십니까?</h5>
+                    
                     <label>
                         <input type="checkbox" name="checkbox" value="1" id="checkbox_">
                     </label>
                     <span class="check_box">[필수]</span><span>위의 약관을 숙지하고 동의합니다.</span>
-                </form>
-            </figure>
-        </div>
-    </div>
-
-    <div class="line_join"></div>
-
-    <div class="join">
-        <form class="jointable" name="join_form" id="join_form">
-            <div>
-				<label for="user_name" class="col-md-2">이름</label>
-				<span class="col-md-10">
-					<input type="text" name="user_name" id="user_name" maxlength="12" placeholder="이름은 한글만 입력 가능합니다" />
-				</span>
-            </div><br>
-            
-			<div>               
-                <label for="user_id" class="col-md-2">회사명</label>
-				<span class="col-md-10">
-					<input type="text" name="user_id" id="user_id" maxlength="12" placeholder="회사명을 입력해 주세요" />
-                </span>
-                <span class="col-md-10">
-					<input type="text" name="user_id" id="user_id" maxlength="12" placeholder="부서명을 입력해 주세요" />
-				</span>
-            </div><br>
-
-            <div>               
-                <label for="user_id" class="col-md-2">부서명</label>
-				<span class="col-md-10">
-					<input type="text" name="user_id" id="user_id" maxlength="12" placeholder="부서명을 입력해 주세요" />
-				</span>
-            </div><br>
-
-            
-            <div>
-				<label for="tel" class="col-md-2">연락처</label>
-				<span class="col-md-10">
-					<input type="tel" name="tel" id="tel" maxlength="11" placeholder=" 010 (-제외)" />
-                </span>
-            </div><br>
-            
-            <div>
-				<label for="email" class="col-md-2">이메일</label>
-				<span class="col-md-10">
-					<input type="email" name="email" id="email" maxlength="20" placeholder="e메일 주소를 입력해 주세요" />
-                </span>
-			</div><br>
-
-			<div>               
-                <label for="user_id" class="col-md-2">제목</label>
-				<span class="col-md-10">
-					<input type="text" name="user_id" id="user_id" maxlength="12" placeholder="제목을 입력해 주세요" />
-				</span>
+                    
+                </figure>
             </div>
-            <div>               
-                <label for="user_id" class="col-md-2">문의 내용</label>
-				<span class="col-md-10">
-					<input type="text" name="user_id" id="user_id" maxlength="12" placeholder="내용을 입력해 주세요" />
-				</span>
-            </div><br>
-
-
-			<div>
-                <div></div>
-				<form name="join_form" id="join_form">
-					<button type="submit" class="join_button">전송 하기</button>
-                </form>
-                <div></div>
-			</div>
-		</form>
+            
+            <div>
+                <figure>
+                    <label for="user_name" class="col-md-2">이름</label>
+				    <span class="col-md-10">
+					    <input type="text" name="user_name" id="user_name" maxlength="12" placeholder="이름은 한글만 입력 가능합니다" />
+				    </span>
+                </figure>
+                
+                <figure>
+                    <label for="user_id" class="col-md-2">회사명</label>
+				    <span class="col-md-10">
+					    <input type="text" name="user_id" id="user_id" maxlength="12" placeholder="회사명을 입력해 주세요" />
+                    </span>
+                    <span class="col-md-10">
+					    <input type="text" name="user_id" id="user_id" maxlength="12" placeholder="부서명을 입력해 주세요" />
+				    </span>
+                </figure>
+                <figure>
+                    <label for="tel" class="col-md-2">연락처</label>
+				    <span class="col-md-10">
+					    <input type="tel" name="tel" id="tel" maxlength="11" placeholder=" 010 (-제외)" />
+                    </span>
+                </figure>
+                <figure>
+                    <label for="email" class="col-md-2">이메일</label>
+				    <span class="col-md-10">
+					    <input type="email" name="email" id="email" maxlength="20" placeholder="e메일 주소를 입력해 주세요" />
+                    </span>
+                </figure>
+                <figure>
+                    <label for="user_id" class="col-md-2">제목</label>
+				    <span class="col-md-10">
+					    <input type="text" name="user_id" id="user_id" maxlength="12" placeholder="제목을 입력해 주세요" />
+				    </span>
+                </figure>
+                <figure>
+                    <label for="user_id" class="col-md-2">문의 내용</label>
+				    <span class="col-md-10">
+					    <input type="text" name="user_id" id="user_id" maxlength="12" placeholder="내용을 입력해 주세요" />
+				    </span>
+                </figure>
+            </div>
+            <div>
+                <form name="join_form" id="join_form">
+                    <button type="submit" class="join_button">전송 하기</button>
+                </form>	
+            </div>
+        </form>
     </div>
     
 
@@ -329,14 +334,16 @@
             });
 
 
-            $("#join_check").submit(function(e){
-	        	e.preventDefault();
+            // $("#join_check").submit(function(e){
+	        // 	e.preventDefault();
 
-                if (!regex.check('#checkbox_', '약관에 동의 하셔야 합니다')) { return false; }
-	        });
+            //     if (!regex.check('#checkbox_', '약관에 동의 하셔야 합니다')) { return false; }
+	        // });
 
             $("#join_form").submit(function(e){
                 e.preventDefault();
+
+                if (!regex.check('#checkbox_', '약관에 동의 하셔야 합니다')) { return false; }
                 
                 
                 /** 이름 검사 */
@@ -361,6 +368,8 @@
                 /** */
                 if (!regex.value('#user_id', '제목을 입력하세요.')) { return false; }
                 if (!regex.value('#user_id', '내용을 입력하세요.')) { return false; }
+                if (!regex.min_length('#user_id', 20, '내용은 최소 20자 이상 입력하셔야 합니다.')) { return false; }
+                if (!regex.max_length('#user_id', 100, '최대 100자 까지만 입력 가능합니다.')) { return false; }
 
 
                 alert("문의하신 사항이 전송되었습니다.");

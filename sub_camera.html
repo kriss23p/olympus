@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>OLYMPUS</title>
+    <link rel="shortcut icon" type="image/x-icon" href="imgs/olym.ico">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="plugins/animate/animate.css" />
     <style type="text/css">
@@ -13,12 +14,24 @@
             top: 20%; right: 3%;
             z-index: 999;
         }
+        .fixed a {width: 120px; height: 120px;}
         .fixed a img {
-            width: 120px;
+            width: 120px; height: 120px;
             background: #eee;
-            border-radius: 100%;            
+            border-radius: 100%;
+            animation: jump 1.2s infinite linear;        
         }
-        .fixed a img:hover {background: hotpink;}
+        .fixed a img:hover {
+            animation: none;
+            background: rgb(135, 135, 221);
+            transform: translateY(-5px);
+            transition: .5s;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+        }
+        @keyframes jump{ 0%{transform: translateY(1px); transition: 1s;}
+            100%{transform: translateY(-6px);}
+        }
+
         .top_sub {width: 75%; margin: 0 auto;
             display: flex; justify-content: space-between;
         }
@@ -27,7 +40,10 @@
         .top_sub div {width: 80%;
             height: 147px;
             border-bottom: 2px solid #272a71;
+            animation: line2 1.5s linear forwards;
         }
+        @keyframes line2{ 0%{width: 1%; transition: 1s;}
+            100%{width: 80%;}}
 
         /*  */
         .top_sub_text {width: 75%;

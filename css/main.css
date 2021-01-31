@@ -1,22 +1,5 @@
-@charset 'utf-8';
-
-/* 손글씨 스타일 */
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
-
-/* 딱딱하지 않은 정자체 */
-@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
-
-/* 딱딱하고 정직한 이쁜 스타일 */
-@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
-
-/* 일반 폰트 느낌 */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
-
-* {margin: 0;}
-div, ul, li, span {list-style: none; margin: 0; padding: 0;}
-header, main, footer {margin: 0; padding: 0;}
-a {text-decoration: none;}
-img {width: 100%;}
+@charset "UTF-8";
+@import url('common.css');
 
 
 /*** head ***/
@@ -38,6 +21,7 @@ header div {width: 75%;
 header div .menu li {
     display: inline-block;
     position: relative;
+    
 }
 header div .menu li::after {content: ''; clear: both; display: block;}
 header div .menu li a {
@@ -47,6 +31,7 @@ header div .menu li a {
     line-height: 80px;
     margin-left: 30px;
     display: block;
+    
 }
 header div .menu li span {
     position: absolute;
@@ -56,6 +41,7 @@ header div .menu li span {
     background: white;
     z-index: 999;
     display: none;
+    
 }
 header div .menu li:nth-of-type(1) span {
     width: 511px;
@@ -77,8 +63,10 @@ header div .menu li span a {
 }
 header div .menu li:hover span {
     display: block;
+    
 }
-header div .menu li a:hover {color: rgb(67, 67, 194);} 
+header div .menu li a:hover {color: rgb(67, 67, 194);
+} 
 header div .menu li span a:hover {color: #e9b224;}
 
 
