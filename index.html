@@ -14,6 +14,7 @@
             z-index: 1; padding-top: 90px;
         }
 
+
         .slide_box div:nth-of-type(2) {
             position: fixed;
             top: 20%; right: 3%;
@@ -46,6 +47,10 @@
 
 
         main {width: 75%; margin: 0 auto;}
+
+        main .mobile_img {display: none;}
+        main .camera img:nth-of-type(2) {display: none;}
+
         main .thumb {
             display: flex;
             justify-content: space-between;
@@ -55,29 +60,6 @@
             width: 45%;
             height: 700px;
         }
-
-
-        /* main .thumb nav:nth-of-type(1) {
-            transform: translate(-1000px, 0px);
-            transition: 1s;
-        }
-        main .thumb nav:nth-of-type(2) {
-            transform: translate(-2000px, 0px);
-            transition: 1.5s;
-        }
-
-
-        main .thumb:hover nav:nth-of-type(1) {
-            transform: translate(0px, 0px);
-            transition: 1.2s;
-        }
-        main .thumb:hover nav:nth-of-type(2) {
-            transform: translate(0px, 0px);
-            transition: 1.7s;
-        }
-         */
-
-
         main .thumb nav img {
             width: 90%;
             margin: 5% 0 0 5%;
@@ -182,7 +164,7 @@
         }
         .photo div h3 {
             position: absolute;
-            top: 110px; left: 1060px;
+            top: 110px; left: 1040px;
             white-space: pre-line;
             font-size: 26px;
             line-height: 40px;
@@ -227,6 +209,11 @@
         .photo div img:nth-of-type(2):hover {
             transform: translate(20px, -20px);
             box-shadow: 10px 10px 10px rgba(0.4, 0, 0, 0);
+        }
+        .photo div h5 {position: absolute;
+            top: 1%; left: 15%; display: none; font-size: 26px;
+            font-weight: lighter; 
+            font-family: 'Nanum Brush Script', cursive;
         }
 
         
@@ -301,9 +288,34 @@
 
 
 
-        @media (max-width:1600px) {         
+        @media (max-width:1720px) {
+            main .thumb nav {height: 640px;}
+
+            .photo div h3 {display: none;}
+            .photo div h4 {bottom: 2px; left: 0;}
+            .photo div h5 {display: block;}
+            .photo div {height: 650px;}
+            .photo div img:nth-of-type(1) {
+                width: 750px;}
+            .photo div img:nth-of-type(2) {
+                width: 620px;}
         }
         @media (min-width: 1000px) and (max-width: 1279px) {
+            main .thumb nav {height: 560px;}
+
+            .photo div {height: 600px;}
+            .photo div h4 {bottom: 12%; left: 0;}
+            .photo div img:nth-of-type(1) {
+                width: 600px;}
+            .photo div img:nth-of-type(2) {
+                width: 500px;}
+
+            footer div ul {display: none;}
+            footer div:nth-of-type(1) h5 {
+                width: 60%;}
+            footer div:nth-of-type(1) span {width: 30%;}
+            footer div:nth-of-type(1) span a:nth-of-type(2) {
+                margin: 0 5px 0 5px;}
         }
 
         @media (min-width: 480px) and (max-width: 999px) {
@@ -312,16 +324,33 @@
             .head_mobile {display: flex;}
 
             /* footer div ul, a {display: none;} */
+            footer div ul {display: none;}
             footer div:nth-of-type(1) h5 {
                 width: 60%;}
             footer div:nth-of-type(1) span {width: 30%;}
             footer div:nth-of-type(1) span a:nth-of-type(2) {
                 margin: 0 5px 0 5px;}
-            
-            /* 고정 카메라 */
-            .slide_box div:nth-of-type(2) {
+
+
+            /* main */
+            .photo {display: none;}
+
+            main {width: 100%;}
+            main .mobile_img {display: block; padding-top: 90px;}
+            main .camera img:nth-of-type(1) {margin: 0 0 -5px 0;}
+            main .camera img:nth-of-type(2) {display: block;}
+            main .thumb nav {
+                height: 450px;
+            }
+            main .thumb nav p:nth-of-type(1) {
                 display: none;
             }
+            
+            /* 슬라이드 + 고정 카메라 */
+            .slide_box {display: none;}
+            /* .slide_box div:nth-of-type(2) {
+                display: none;
+            } */
         }
 
     </style>
@@ -397,6 +426,7 @@
 
 
     <main>
+        <div class="mobile_img"><img src="imgs/slide2_3.jpg"></div>
         <div class="thumb">
             <nav>
                 <img src="imgs/thumb1.jpg">
@@ -419,9 +449,9 @@
         </div>
 
 
-
         <map class="camera" name="navi" id="navi">
             <img src="imgs/line_index.jpg">
+            <img src="imgs/slide1.jpg">
             <!-- <h3><strong>물속에서도 자유롭게! 
                 올림푸스</strong> μ TOUGH TG-4</h3> -->
             <figure class='gray_layer' id='background'></figure>
@@ -448,6 +478,7 @@
             <h4>나만의 알고 있는 사진 찍는 방법이나 포토존을
                 공유해 보세요! 추첨을 통해 다양한 상품을 드리니
                 이벤트 소식을 놓치지 마세요</h4>
+            <h5>상황에 따라 다양한 선택이 가능한 올림푸스 카메라로 잊지못할 추억을 남겨보세요 !</h5>
         </div>
         <img src="imgs/line_index2.jpg">
     </div>
@@ -468,7 +499,7 @@
                 <li><a href="sub_videoscope.html">산업용 Videoscopes</a></li>
                 <li><a href="sub_camera.html">올림푸스 카메라</a></li>
             </ul>
-            <a href="sub_join.html">견적 및 A/S 문의</a>
+            <ul><a href="sub_join.html">견적 및 A/S 문의</a></ul>
 
             <span>
                 <a href="https://www.facebook.com/"></a>

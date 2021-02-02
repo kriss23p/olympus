@@ -120,6 +120,90 @@
             display: flex; justify-content: space-between;
         }
 
+
+
+
+        /* 모바일 태블릿 */
+        .head_mobile {width: 100%;
+            height: 90px;
+            background: white;
+            margin: 0 auto;
+            position: fixed; 
+            top: 0; left: 0; z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid black;
+            display: none;
+        }
+        .head_mobile a img {width: 195px;}
+        .head_mobile a:nth-of-type(2) {
+            width: 70px; height: 70px;
+            margin: 10px 10px 0 0;
+            position: relative;
+        }
+        .head_mobile a span {cursor: pointer;
+            width: 20px;
+            height: 10px;
+        }
+        .head_mobile a span nav:nth-of-type(1) {
+            margin-top: 16px;
+        }
+        .head_mobile a span nav:nth-of-type(2) {
+            margin: 10px 0 10px 5px;
+        }
+        .head_mobile a span nav {
+            width: 60px; height: 6px;
+            background: black;
+            border-radius: 3px;
+            margin-left: 5px;
+        }
+
+        .menu_none {width: 400px;
+            background: black;
+            opacity: 0.5;
+            height: 480px;
+            position: absolute;
+            top: 70px; right: 0;
+        }
+        .menu_none li {         
+            height: 70px;
+            text-align: right;
+            margin-right: 30px;
+        }
+        .menu_none li:nth-of-type(1) {
+            margin: 40px 20px 0 0;
+        } 
+        .menu_none li a {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+        .menu_none {display: none;}
+        .menu_none.on {display: inline;}
+
+
+
+        @media (min-width: 480px) and (max-width: 999px) {
+            /* 헤더 푸터 */
+            header {display: none;}
+            .head_mobile {display: flex;}
+
+            /* footer div ul, a {display: none;} */
+            footer div ul {display: none;}
+            footer div:nth-of-type(1) h5 {
+                width: 60%;}
+            footer div:nth-of-type(1) span {width: 30%;}
+            footer div:nth-of-type(1) span a:nth-of-type(2) {
+                margin: 0 5px 0 5px;}
+
+
+            /* main */
+
+            
+            /* 고정 카메라 */
+            .fixed {display: none;}
+        }
+
     </style>
 </head>
 <body>
@@ -159,6 +243,29 @@
             </ul>
         </div>
     </header>
+
+
+    <!-- 모바일 태블릿 메뉴 -->
+    <div class="head_mobile">
+        <a href="#"><img src="imgs/logo_mobile.jpg"></a>
+        <a href="#" id="button">
+            <span>
+                <nav></nav>
+                <nav></nav>
+                <nav></nav>
+            </span>
+
+            <ul class="menu_none">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sub_science.html">Science Solution</a></li>
+                <li><a href="sub_videoscope.html">VideoScope</a></li>
+                <li><a href="sub_camera.html">OLYMPUS camera</a></li>
+                <li><a href="sub_join.html">A/s order</a></li>
+                <li><a href="sub_map.html">Site Map</a></li>
+            </ul>
+        </a>
+    </div>
+
     <div class="fixed"><a href="sub_camera.html"><img src="imgs/fixed3.png"></a></div>
     <div class="top_sub">
         <h2>올림푸스 카메라</h2>
@@ -329,7 +436,7 @@
                 <li><a href="sub_videoscope.html">산업용 Videoscopes</a></li>
                 <li><a href="sub_camera.html">올림푸스 카메라</a></li>
             </ul>
-            <a href="sub_join.html">견적 및 A/S 문의</a>
+            <ul><a href="sub_join.html">견적 및 A/S 문의</a></ul>
 
             <span>
                 <a href="https://www.facebook.com/"></a>
@@ -378,6 +485,11 @@
                 $(this).fadeOut(300);       // 배경 레이어의 숨김
                 $("#front").fadeOut(200);   // 이미지 레이어의 숨김
             });
+
+            // 모바일 태블릿 메뉴 클릭 
+            $("#button").click(function(){
+				$(".menu_none").toggleClass('on');
+			});	
 		});
 	</script>
 </body>
